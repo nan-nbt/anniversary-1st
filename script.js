@@ -1,7 +1,7 @@
 const slides = [
-    { src: 'images/castorice-purple-7680x4320-22219.jpg', caption: 'Our first photo together' },
-    { src: 'images/nezuko-kamado-ai-3840x2160-12515.jpg', caption: 'That rainy walk we loved' },
-    { src: 'images/tanjiro-kamado-ai-3840x2160-12479.jpg', caption: 'Your smile on our wedding day' },
+  { src: 'images/image-1.jpg', caption: 'Our first photo together' },
+  { src: 'images/image-2.jpg', caption: 'The day you made me laugh endlessly' },
+  { src: 'images/image-3.jpg', caption: '1 year later, still falling for you 💖' }
 ];
 
 let index = 0;
@@ -18,8 +18,22 @@ function showSlide() {
   }, 400);
 }
 
-// Auto-slide every 5 seconds
 setInterval(() => {
   index = (index + 1) % slides.length;
   showSlide();
 }, 5000);
+
+// ❤️ Floating hearts generator
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+  heart.style.fontSize = `${Math.random() * 24 + 16}px`;
+  heart.innerText = "💖";
+  document.querySelector(".hearts").appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 300);
