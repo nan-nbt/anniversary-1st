@@ -1,2 +1,2 @@
 # love-journey
-Love Journey of Anan &amp; Rara
+Anniversary 1st
